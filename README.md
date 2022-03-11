@@ -1,13 +1,13 @@
 # Proxy-Grabber
 Simple http proxy grabber and checker
 
-## Installation
+### Installation
 
 ```
 $ pip3 install proxy-grabber
 ```
 
-## Usage
+### Usage
 ``` python
 from proxy_grabber import ProxyGrabber
 grabber = ProxyGrabber()
