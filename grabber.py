@@ -8,7 +8,7 @@ grabber = ProxyGrabber()
 
 grabber.grab_proxies(proxy_limit=100)
 grabber.get_checked_proxies() # All checked proxies
-grabber.save('./data/checked_proxies.list') # Save checked proxies to the file
+grabber.save('./output/checked_proxies.list') # Save checked proxies to the file
             
 class ProxyGrabber:
     def __init__(self):
@@ -81,7 +81,7 @@ class ProxyGrabber:
 
     def create_txt(self, proxies):
         proxies = list(set(proxies))
-        with open(f'./data/checked_proxies.list', 'a') as f:
+        with open(f'./output/checked_proxies.list', 'a') as f:
             for proxy in proxies:
                 if proxy != '':
                     f.write(f'{proxy}\n')
