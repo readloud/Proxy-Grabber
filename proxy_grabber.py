@@ -33,23 +33,23 @@ class ProxyGrabber:
     def get_ip(self, proxies={}):
         return requests.get(url='http://ip-api.com/json', proxies=proxies).json()['query']
 
-    def load(self, filename='./data/proxy-list.txt'):
+    def load(self, filename='./output/proxy-list.txt'):
         self.load_proxies(filename)
 
-    def load_proxies(self, filename='./data/proxy-list.txt'):
+    def load_proxies(self, filename='./output/proxy-list.txt'):
         file = open(filename, 'r')
         proxies = file.readlines()
         file.close()
         for proxy in proxies:
             self.proxy_list.append(proxy.rstrip())
 
-    def save(self, filename='./data/proxy-list.txt'):
+    def save(self, filename='./output/proxy-list.txt'):
         self.save_proxies(filename)
 
     def set_countries(self, countries):
         self.proxy_countries = countries
 
-    def save_proxies(self, filename='./data/proxy-list.txt'):
+    def save_proxies(self, filename='./output/proxy-list.txt'):
         file = open(filename, 'w')
         for proxy in self.checked_proxies:
             file.write(proxy[7:] + '\n')
